@@ -1,5 +1,13 @@
 
-const questions = require("./index.js");
+// const fs = require("fs");
+
+// const askQuestions = require("../Dev-Profile-Generator/askQuestions.js");
+const callAPI1 = require('../Dev-Profile-Generator/callApi.js');
+
+
+const callAPI2 = require('../Dev-Profile-Generator/callApi.js');
+
+
 const colors = {
   green: {
     wrapperBackground: "#E6E1C3",
@@ -28,8 +36,9 @@ const colors = {
 };
 
 
-function generateHTML(colorChosen) {
-  // console.log(colorChosen);
+function generateHTML(username,colorChosen) {
+//   console.log(colorChosen);
+//   console.log(res.githubResponse);
   return `<!DOCTYPE html>
 <html lang="en">
    <head>
