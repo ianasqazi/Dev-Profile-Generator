@@ -2,7 +2,7 @@
 // const fs = require("fs");
 
 // const askQuestions = require("../Dev-Profile-Generator/askQuestions.js");
-const callAPI1 = require('../Dev-Profile-Generator/callApi.js');
+const callAPI = require('../Dev-Profile-Generator/callApi.js');
 
 
 // const callAPI2 = require('../Dev-Profile-Generator/callApi.js');
@@ -36,10 +36,10 @@ const colors = {
 };
 
 
-function generateHTML(username,colorChosen,res) {
+function generateHTML(username,colorChosen,res,res2) {
 //   console.log(colorChosen);
 //   console.log(res.data.name);
-  return `<!DOCTYPE html>
+  console.log( `<!DOCTYPE html>
 <html lang="en">
    <head>
       <meta charset="UTF-8" />
@@ -218,7 +218,7 @@ function generateHTML(username,colorChosen,res) {
             </div>
             <div class="card col">
              <h3>GitHub Stars</h3>
-             <h4>"####"</h4>
+             <h4>${res2.data.length}</h4>
             </div>
             <div class="card col">
              <h3>Following</h3>
@@ -231,7 +231,7 @@ function generateHTML(username,colorChosen,res) {
       </div>
     
     </body>    
-</html>`
+</html>`)
 
         };
 

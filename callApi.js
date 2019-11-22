@@ -10,7 +10,7 @@ const createPdf = require("../Dev-Profile-Generator/convertPDF.js")
 
 
 
-async function callAPI1(username,colorChosen){
+async function callAPI(username,colorChosen){
         
     const queryUrl1 = `https://api.github.com/users/${username}`;
     const res = await axios.get(queryUrl1);
@@ -32,24 +32,13 @@ async function callAPI1(username,colorChosen){
 
         // console.log(githubResponse);
     //   })    
+
+    const queryUrl2 = `https://api.github.com/users/${username}/starred`;
+    const res2 = await axios.get(queryUrl2);
        
-        await generateHTML(username,colorChosen,res);
+        await generateHTML(username,colorChosen,res,res2);
         // await createPdf(generateHTML);
         
-        
-
-//         htmlToPdf.convertHTMLFile(generateHTML, './test.pdf',
-//     function (error, success) {
-//        if (error) {
-//             console.log('Oh noes! Errorz!');
-//             console.log(error);
-//         } else {
-//             console.log('Woot! Success!');
-//             console.log(success);
-//         }
-//     }
-// );
-
 
         
     };
@@ -86,7 +75,7 @@ async function callAPI1(username,colorChosen){
 //     }
 
 // module.exports = [callAPI1,callAPI2];
-module.exports = callAPI1;
+module.exports = callAPI;
 
 
 
