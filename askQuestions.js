@@ -1,6 +1,5 @@
 
 const inquirer = require("inquirer");
-// const [callAPI1,callAPI2] = require('../Dev-Profile-Generator/callApi.js');
 const callAPI1 = require('../Dev-Profile-Generator/callApi.js');
 
 
@@ -24,12 +23,7 @@ inquirer
     .prompt(questions)
     
     .then(function({username,colorChosen}) {
-
         callAPI1(username,colorChosen);
-        // callAPI2(username,colorChosen);
-                    // console.log(githubResponse);
-
-    
         });
     };    
 

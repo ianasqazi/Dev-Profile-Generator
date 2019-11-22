@@ -18,9 +18,7 @@
   "homepage": "https://github.com/ianasqazi/Dev-Profile-Generator#readme",
   "dependencies": {
     "axios": "^0.19.0",
-    "html-pdf": "^2.2.0",
     "html-to-pdf": "^0.1.11",
-    "inquirer": "^7.0.0",
-    "puppeteer": "^2.0.0"
+    "inquirer": "^7.0.0"
   }
 }

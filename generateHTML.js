@@ -1,11 +1,12 @@
 
-// const fs = require("fs");
+const fs = require("fs");
+const util = require("util");
+const writeFileAsync = util.promisify(fs.writeFile);
 
-// const askQuestions = require("../Dev-Profile-Generator/askQuestions.js");
+
+var pdf = require('html-pdf');
+
 const callAPI = require('../Dev-Profile-Generator/callApi.js');
-
-
-// const callAPI2 = require('../Dev-Profile-Generator/callApi.js');
 
 
 const colors = {
@@ -37,9 +38,8 @@ const colors = {
 
 
 function generateHTML(username,colorChosen,res,res2) {
-//   console.log(colorChosen);
-//   console.log(res.data.name);
-  console.log( `<!DOCTYPE html>
+
+  return writeFileAsync(`${username}.html`,`<!DOCTYPE html>
 <html lang="en">
    <head>
       <meta charset="UTF-8" />
@@ -224,15 +224,13 @@ function generateHTML(username,colorChosen,res,res2) {
              <h3>Following</h3>
              <h4>${res.data.following}</h4>
             </div>
+
           </div>
-    
-        </main>
-            
+        </main>  
       </div>
-    
     </body>    
 </html>`)
 
-        };
+};
 
 module.exports = generateHTML;
