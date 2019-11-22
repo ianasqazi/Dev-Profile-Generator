@@ -1,7 +1,8 @@
 const axios = require("axios");
 // const fs = require("fs");
 
-// const htmlToPdf = require('html-to-pdf');
+var htmlToPdf = require('html-to-pdf');
+
 
 
 
@@ -9,8 +10,6 @@ const axios = require("axios");
 const askQuestions = require("../Dev-Profile-Generator/askQuestions.js")
 const generateHTML = require('../Dev-Profile-Generator/generateHTML.js');
 const convertPDF = require("../Dev-Profile-Generator/generateHTML.js")
-
-const createPdf = require("../Dev-Profile-Generator/convertPDF.js")
 
 
 async function callAPI(username,colorChosen){
@@ -23,6 +22,18 @@ async function callAPI(username,colorChosen){
        
     await generateHTML(username,colorChosen,res,res2)
         
+    htmlToPdf.convertHTMLFile(`${username}.html`, `${username}.pdf`,
+    function (error, success) {
+       if (error) {
+            console.log('Oh noes! Errorz!');
+            console.log(error);
+        } else {
+            console.log('Woot! Success!');
+            console.log(success);
+        }
+    }
+);
+
     };
 
     module.exports = callAPI;
