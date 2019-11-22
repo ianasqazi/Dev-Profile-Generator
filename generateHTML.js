@@ -5,7 +5,7 @@
 const callAPI1 = require('../Dev-Profile-Generator/callApi.js');
 
 
-const callAPI2 = require('../Dev-Profile-Generator/callApi.js');
+// const callAPI2 = require('../Dev-Profile-Generator/callApi.js');
 
 
 const colors = {
@@ -36,9 +36,9 @@ const colors = {
 };
 
 
-function generateHTML(username,colorChosen) {
+function generateHTML(username,colorChosen,res) {
 //   console.log(colorChosen);
-//   console.log(res.githubResponse);
+//   console.log(res.data.name);
   return `<!DOCTYPE html>
 <html lang="en">
    <head>
@@ -188,14 +188,14 @@ function generateHTML(username,colorChosen) {
       <div class="wrapper">
     
         <div class="photo-header">
-          <img src="" alt="Portrait">
+          <img src="${res.data.avatar_url}" alt="Portrait">
           <h1>Hi !</h1>
-          <h2>My name is Anas !</h2>
-          <p class="workExp-date">I am currently working at</p>
+          <h2>My name is ${res.data.name} !</h2>
+          <p class="workExp-date">I am currently working at ${res.data.company}</p>
           <div class="links-nav">
-            <a href="#" class="nav-link">Location</a>
-            <a href="#" class="nav-link">GitHub</a>
-            <a href="#" class="nav-link">Blog</a>
+            <a href="${res.data.location}" class="nav-link">Location</a>
+            <a href="${res.data.html_url}" class="nav-link">GitHub</a>
+            <a href="${res.data.blog}" class="nav-link">Blog</a>
           </div>
         </div>
     
@@ -203,26 +203,26 @@ function generateHTML(username,colorChosen) {
           
           <div class="row">
             <div class="col">
-              <h5>i build things</h5>
+              <h5>${res.data.bio}</h5>
             </div>
           </div>
     
           <div class="row">
             <div class="card col">
              <h3>Public Repositories</h3>
-             <h4>"count"</h4>
+             <h4>${res.data.public_repos}</h4>
             </div>
             <div class="card col">
              <h3>Followers</h3>
-             <h4>"count"</h4>
+             <h4>${res.data.followers}</h4>
             </div>
             <div class="card col">
              <h3>GitHub Stars</h3>
-             <h4>"count"</h4>
+             <h4>"####"</h4>
             </div>
             <div class="card col">
              <h3>Following</h3>
-             <h4>"count"</h4>
+             <h4>${res.data.following}</h4>
             </div>
           </div>
     
@@ -232,6 +232,7 @@ function generateHTML(username,colorChosen) {
     
     </body>    
 </html>`
+
         };
 
 module.exports = generateHTML;
