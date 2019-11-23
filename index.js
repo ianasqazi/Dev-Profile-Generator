@@ -1,4 +1,4 @@
-const askQuestions = require("../Dev-Profile-Generator/askQuestions.js")
+const askQuestions = require("../Dev-Profile-Generator/askQuestions")
 
 function init(){
     askQuestions();

@@ -1,14 +1,10 @@
 const axios = require("axios");
 const fs = require("fs");
 const path = require("path");
-
-
-// const convertHTMLToPDF = require("pdf-puppeteer");
 const puppeteer = require('puppeteer');
 
 const askQuestions = require("../Dev-Profile-Generator/askQuestions")
-const generateHTML = require('../Dev-Profile-Generator/generateHTML');
-// const convertPDF = require("../Dev-Profile-Generator/generateHTML.js")
+const generateHTML = require("../Dev-Profile-Generator/generateHTML");
 
 
 async function callAPI(username,colorChosen){
@@ -31,9 +27,9 @@ async function callAPI(username,colorChosen){
         };
 
         const contentHtml = await fs.readFileSync(path.resolve(__dirname, `${username}.html`)).toString('utf-8');
-        await page. setContent(contentHtml);
+        await page.setContent(contentHtml);
+        await page.waitForSelector('main');
 
-        // await page.screenshot({ path: 'output.png' });
         await page.pdf(options);
         await page.close();
         await browser.close();

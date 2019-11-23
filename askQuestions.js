@@ -1,9 +1,6 @@
 
 const inquirer = require("inquirer");
-const callAPI1 = require('../Dev-Profile-Generator/callApi.js');
-
-
-
+const callAPI1 = require('../Dev-Profile-Generator/callApi');
 
 function askQuestions(){
     const questions = [
@@ -19,9 +16,7 @@ function askQuestions(){
         }
     ];
 
-inquirer
-    
-    .prompt(questions)
+inquirer.prompt(questions)
     
     .then(function({username,colorChosen}) {
         callAPI1(username,colorChosen);
