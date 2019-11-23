@@ -30,28 +30,14 @@ async function callAPI(username,colorChosen){
             format:'A4'
         };
 
-        // await page.setContent(generateHTML(username,colorChosen,res,res2));
-        // await page.goto('https://google.com');
+        const contentHtml = await fs.readFileSync(path.resolve(__dirname, `${username}.html`)).toString('utf-8');
+        await page. setContent(contentHtml);
 
-
-        const contentHtml = fs.readFileSync(path.resolve("../Dev-Profile-Generator/ianasqazi.html"));
-        await page.waitForSelector('body');
-
-
-        await page. setContent(contentHtml);   
-
-        // await page.goto(`file://${username}.html`);
-
-        // await page.goto('ianasqazi.html');
-
-        // console.log(page);
-
-        await page.screenshot({ path: 'output.png' });
+        // await page.screenshot({ path: 'output.png' });
         await page.pdf(options);
         await page.close();
         await browser.close();
     }
-
     createPDF();
 
     };

@@ -190,9 +190,9 @@ function generateHTML(username,colorChosen,res,res2) {
           <h2>My name is ${res.data.name} !</h2>
           <p class="workExp-date">I am currently working at ${res.data.company}</p>
           <div class="links-nav">
-            <a href="${res.data.location}" class="nav-link">Location</a>
-            <a href="${res.data.html_url}" class="nav-link">GitHub</a>
-            <a href="${res.data.blog}" class="nav-link">Blog</a>
+            <a href="https://www.google.com/maps/place/${res.data.location}" target="_blank" class="nav-link">Location</a>
+            <a href="${res.data.html_url}" target="_blank" class="nav-link">GitHub</a>
+            <a href="${res.data.blog}" target="_blank" class="nav-link">Blog</a>
           </div>
         </div>
     
