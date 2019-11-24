@@ -11,7 +11,7 @@ Get information about any profile on Github by providing the github username.
 
 Click the link below to check the repository :
 
-[GitHub URL](https://github.com/ianasqazi/Dev-Profile-Generator)
+[GitHub URL : https://github.com/ianasqazi/Dev-Profile-Generator](https://github.com/ianasqazi/Dev-Profile-Generator)
 
 ## Preview
 
