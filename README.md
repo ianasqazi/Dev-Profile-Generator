@@ -1,9 +1,5 @@
 # ****Dev-Profile-Generator**
-Get information about any profile on Github
-
-https://ianasqazi.github.io/Dev-Profile-Generator/
-
-
+Get information about any profile on Github by providing the github username.
 
 ** Add preview above 
 
@@ -13,19 +9,25 @@ https://ianasqazi.github.io/Dev-Profile-Generator/
 >
 > SO THAT I can easily prepare reports for stakeholders
 
+## Repository 
+
+Click the link below to check the repository :
+
+GitHub Repository => [Go To Repository](https://github.com/ianasqazi/Dev-Profile-Generator)
+
+## Preview
+
+![screenrecording_DevProfile](/Users/ianasqazi/Downloads/screenrecording_DevProfile.gif)
+
+
+
+## PDF Output
+
+![screenshot](/Users/ianasqazi/UoT-Assignments/Dev-Profile-Generator/screenshot.png)
+
 ## Requirements
 
-For testing, you will need Node.js and node global package, and also the following dependencies packages installed in your environement.  
-
-- Inquirer
-- Axios
-- Puppeteer
-
-Hence run the following command in the terminal window where the package.json resides.
-
-```bash
-npm install
-```
+For testing, you will need Node.js and node global package, and also the following dependency packages installed in your environement.  
 
 ### Node
 
@@ -46,28 +48,29 @@ npm --version
 6.13.1
 ```
 
+### NPM Packages
+
+- Inquirer
+- Axios
+- Puppeteer
+
+## Running the Application
+
+Run the following commands in your terminal window 
+
+```bash
+git clone https://github.com/ianasqazi/Dev-Profile-Generator.git
+
+cd Dev-Profile-Generator
+
+npm install
+```
 
 
-|      |                                                              |
-| ---- | ------------------------------------------------------------ |
-|      | ## Install                                                   |
-|      |                                                              |
-|      | $ git clone https://github.com/YOUR_USERNAME/PROJECT_TITLE   |
-|      | $ cd PROJECT_TITLE                                           |
-|      | $ yarn install                                               |
-|      |                                                              |
-|      | ## Configure app                                             |
-|      |                                                              |
-|      | Open `a/nice/path/to/a.file` then edit it with your settings. You will need: |
-|      |                                                              |
-|      | - A setting;                                                 |
-|      | - Another setting;                                           |
-|      | - One more setting;                                          |
-|      |                                                              |
-|      | ## Running the project                                       |
-|      |                                                              |
-|      | $ yarn start                                                 |
-|      |                                                              |
-|      | ## Simple build for production                               |
-|      |                                                              |
-|      | $ yarn build                                                 |
+
+All packages will be installed and now run the application with the command below : 
+
+```bash
+node index.js
+```
+

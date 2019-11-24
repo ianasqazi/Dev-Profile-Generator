@@ -7,6 +7,18 @@ const callAPI = require('../Dev-Profile-Generator/callApi.js');
 
 
 const colors = {
+  multicolor: {
+    wrapperBackground: "#0597F2",
+    headerBackground: "#BF3636",
+    headerColor: "#F2CB05",
+    photoBorderColor: "#F28705"
+  },
+  grey: {
+    wrapperBackground: "#8C857B",
+    headerBackground: "#403C38",
+    headerColor: "#F2EBDF",
+    photoBorderColor: "#BFB5A8"
+  },
   green: {
     wrapperBackground: "#E6E1C3",
     headerBackground: "#C1C72C",
@@ -190,9 +202,9 @@ function generateHTML(username,colorChosen,res,res2) {
           <h2>My name is ${res.data.name} !</h2>
           <p class="workExp-date">I am currently working at ${res.data.company}</p>
           <div class="links-nav">
-            <a href="https://www.google.com/maps/place/${res.data.location}" target="_blank" class="nav-link">Location</a>
-            <a href="${res.data.html_url}" target="_blank" class="nav-link">GitHub</a>
-            <a href="${res.data.blog}" target="_blank" class="nav-link">Blog</a>
+            <a href="https://www.google.com/maps/place/${res.data.location}" target="_blank" class="nav-link"><i class="fas fa-location-arrow"> ${res.data.location}</i></a>
+            <a href="${res.data.html_url}" target="_blank" class="nav-link"><i class="fab fa-github"> GitHub</i></a>
+            <a href="${res.data.blog}" target="_blank" class="nav-link"><i class="fas fa-rss"> Blog</i></a>
           </div>
         </div>
     
@@ -213,6 +225,9 @@ function generateHTML(username,colorChosen,res,res2) {
              <h3>Followers</h3>
              <h4>${res.data.followers}</h4>
             </div>
+          </div>
+
+          <div class="row">
             <div class="card col">
              <h3>GitHub Stars</h3>
              <h4>${res2.data.length}</h4>
@@ -221,8 +236,8 @@ function generateHTML(username,colorChosen,res,res2) {
              <h3>Following</h3>
              <h4>${res.data.following}</h4>
             </div>
-
           </div>
+
         </main>  
       </div>
     </body>    

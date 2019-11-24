@@ -11,7 +11,7 @@ function askQuestions(){
         {
             type: 'list',
             message: "Choose any color",
-            choices: ['green', 'blue', 'pink', 'red'],
+            choices: ['grey','green', 'blue', 'pink', 'red','multicolor'],
             name:"colorChosen"
         }
     ];

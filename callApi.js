@@ -20,7 +20,6 @@ async function callAPI(username,colorChosen){
     const createPDF = async (colorChosen,generateHTML) => {
         const browser = await puppeteer.launch();
         const page = await browser.newPage();
-
         const options = {
             path: `${username}_PDF.pdf`,
             format:'A4'
@@ -31,6 +30,8 @@ async function callAPI(username,colorChosen){
         await page.waitForSelector('main');
 
         await page.pdf(options);
+        await page.screenshot({ path: 'screenshot.png', fullPage: true });
+
         await page.close();
         await browser.close();
     }
@@ -39,5 +40,3 @@ async function callAPI(username,colorChosen){
     };
 
 module.exports = callAPI;
-
-// module.exports = createPDF;
