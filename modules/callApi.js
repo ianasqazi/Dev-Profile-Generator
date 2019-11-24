@@ -3,8 +3,8 @@ const fs = require("fs");
 const path = require("path");
 const puppeteer = require('puppeteer');
 
-const askQuestions = require("../Dev-Profile-Generator/askQuestions")
-const generateHTML = require("../Dev-Profile-Generator/generateHTML");
+const askQuestions = require("./askQuestions")
+const generateHTML = require("./generateHTML");
 
 
 async function callAPI(username,colorChosen){

@@ -3,7 +3,7 @@ const fs = require("fs");
 const util = require("util");
 const writeFileAsync = util.promisify(fs.writeFile);
 
-const callAPI = require('../Dev-Profile-Generator/callApi.js');
+const callAPI = require('./callApi');
 
 
 const colors = {

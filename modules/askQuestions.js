@@ -1,6 +1,6 @@
 
 const inquirer = require("inquirer");
-const callAPI1 = require('../Dev-Profile-Generator/callApi');
+const callAPI1 = require('./callApi');
 
 function askQuestions(){
     const questions = [
