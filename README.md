@@ -1,8 +1,6 @@
 # **Dev-Profile-Generator**
 Get information about any profile on Github by providing the github username.
 
-** Add preview above 
-
 > AS A product manager
 >
 > I WANT a developer profile generator
@@ -13,7 +11,7 @@ Get information about any profile on Github by providing the github username.
 
 Click the link below to check the repository :
 
-GitHub Repository => [Go To Repository](https://github.com/ianasqazi/Dev-Profile-Generator)
+[GitHub Repository](https://github.com/ianasqazi/Dev-Profile-Generator)
 
 ## Preview
 
