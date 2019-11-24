@@ -1,4 +1,4 @@
-# ****Dev-Profile-Generator**
+# **Dev-Profile-Generator**
 Get information about any profile on Github by providing the github username.
 
 ** Add preview above 
@@ -18,12 +18,6 @@ GitHub Repository => [Go To Repository](https://github.com/ianasqazi/Dev-Profile
 ## Preview
 
 ![screenrecording_DevProfile](/sample/screenrecording_DevProfile.gif)
-
-
-
-## PDF Output
-
-![screenshot](sample/screenshot.png)
 
 ## Requirements
 
@@ -66,11 +60,12 @@ cd Dev-Profile-Generator
 npm install
 ```
 
-
-
 All packages will be installed and now run the application with the command below : 
 
 ```bash
 node index.js
 ```
 
+## PDF Output
+
+![screenshot](sample/screenshot.png)
