@@ -23,7 +23,7 @@ GitHub Repository => [Go To Repository](https://github.com/ianasqazi/Dev-Profile
 
 ## PDF Output
 
-![screenshot](/Users/ianasqazi/UoT-Assignments/Dev-Profile-Generator/screenshot.png)
+![screenshot](sample/screenshot.png)
 
 ## Requirements
 
