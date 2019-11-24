@@ -53,14 +53,18 @@ Run the following commands in your terminal window
 ```bash
 git clone https://github.com/ianasqazi/Dev-Profile-Generator.git
 
-cd Dev-Profile-Generator
+cd Dev-Profile-Generator/
 
 npm install
+
+
 ```
 
 All packages will be installed and now run the application with the command below : 
 
 ```bash
+cd Dev-Profile-Generator/modules/
+
 node index.js
 ```
 
