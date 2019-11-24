@@ -17,7 +17,7 @@ GitHub Repository => [Go To Repository](https://github.com/ianasqazi/Dev-Profile
 
 ## Preview
 
-![screenrecording_DevProfile](/Users/ianasqazi/Downloads/screenrecording_DevProfile.gif)
+![screenrecording_DevProfile](/sample/screenrecording_DevProfile.gif)
 
 
 
