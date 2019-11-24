@@ -1,7 +1,8 @@
 
-const inquirer = require("inquirer");
-const callAPI1 = require('./callApi');
+const inquirer = require("inquirer"); // import inquirer npm library for command prompt 
+const callAPI1 = require('./callApi'); // import function from callApi.js file
 
+// questions to ask user
 function askQuestions(){
     const questions = [
         {
@@ -15,6 +16,9 @@ function askQuestions(){
             name:"colorChosen"
         }
     ];
+
+// Prompt questions to user
+// call GitHub Api's get information based on users input
 
 inquirer.prompt(questions)
     

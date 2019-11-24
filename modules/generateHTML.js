@@ -1,11 +1,11 @@
 
-const fs = require("fs");
-const util = require("util");
+const fs = require("fs"); // import fs npm library to write file
+const util = require("util"); // import util npm library to write file
 const writeFileAsync = util.promisify(fs.writeFile);
 
-const callAPI = require('./callApi');
+const callAPI = require('./callApi'); // import function from callApi.js file
 
-
+// Colors to set base on users input selected
 const colors = {
   multicolor: {
     wrapperBackground: "#0597F2",
@@ -45,9 +45,10 @@ const colors = {
   }
 };
 
-
+// Function to generate HTML based on user input 
 function generateHTML(username,colorChosen,res,res2) {
 
+  // Return the html file created
   return writeFileAsync(`${username}.html`,`<!DOCTYPE html>
 <html lang="en">
    <head>
