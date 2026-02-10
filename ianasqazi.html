@@ -1,55 +1,4 @@
-
-const fs = require("fs"); // import fs npm library to write file
-const util = require("util"); // import util npm library to write file
-const writeFileAsync = util.promisify(fs.writeFile);
-
-const callAPI = require('./callApi'); // import function from callApi.js file
-
-// Colors to set base on users input selected
-const colors = {
-  multicolor: {
-    wrapperBackground: "#0597F2",
-    headerBackground: "#BF3636",
-    headerColor: "#F2CB05",
-    photoBorderColor: "#F28705"
-  },
-  grey: {
-    wrapperBackground: "#8C857B",
-    headerBackground: "#403C38",
-    headerColor: "#F2EBDF",
-    photoBorderColor: "#BFB5A8"
-  },
-  green: {
-    wrapperBackground: "#E6E1C3",
-    headerBackground: "#C1C72C",
-    headerColor: "black",
-    photoBorderColor: "black"
-  },
-  blue: {
-    wrapperBackground: "#5F64D3",
-    headerBackground: "#26175A",
-    headerColor: "white",
-    photoBorderColor: "#73448C"
-  },
-  pink: {
-    wrapperBackground: "#879CDF", 
-    headerBackground: "#FF8374",
-    headerColor: "white",
-    photoBorderColor: "#FEE24C"
-  },
-  red: {
-    wrapperBackground: "#DE9967",
-    headerBackground: "#870603",
-    headerColor: "white",
-    photoBorderColor: "white"
-  }
-};
-
-// Function to generate HTML based on user input 
-function generateHTML(username,colorChosen,res,res2) {
-
-  const htmlContent = `
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
    <head>
       <meta charset="UTF-8" />
@@ -75,7 +24,7 @@ function generateHTML(username,colorChosen,res,res2) {
          height: 100%;
          }
          .wrapper {
-         background-color: ${colors[colorChosen].wrapperBackground};
+         background-color: #E6E1C3;
          padding-top: 100px;
          }
          body {
@@ -117,8 +66,8 @@ function generateHTML(username,colorChosen,res,res2) {
          display: flex;
          justify-content: center;
          flex-wrap: wrap;
-         background-color: ${colors[colorChosen].headerBackground};
-         color: ${colors[colorChosen].headerColor};
+         background-color: #C1C72C;
+         color: black;
          padding: 10px;
          width: 95%;
          border-radius: 6px;
@@ -129,7 +78,7 @@ function generateHTML(username,colorChosen,res,res2) {
          border-radius: 50%;
          object-fit: cover;
          margin-top: -75px;
-         border: 6px solid ${colors[colorChosen].photoBorderColor};
+         border: 6px solid black;
          box-shadow: rgba(0, 0, 0, 0.3) 4px 1px 20px 4px;
          }
          .photo-header h1, .photo-header h2 {
@@ -172,8 +121,8 @@ function generateHTML(username,colorChosen,res,res2) {
          .card {
            padding: 20px;
            border-radius: 6px;
-           background-color: ${colors[colorChosen].headerBackground};
-           color: ${colors[colorChosen].headerColor};
+           background-color: #C1C72C;
+           color: black;
            margin: 20px;
          }
          
@@ -198,14 +147,14 @@ function generateHTML(username,colorChosen,res,res2) {
       <div class="wrapper">
     
         <div class="photo-header">
-          <img src="${res.data.avatar_url}" alt="Portrait">
+          <img src="https://avatars.githubusercontent.com/u/53060634?v=4" alt="Portrait">
           <h1>Hi !</h1>
-          <h2>My name is ${res.data.name} !</h2>
-          <p class="workExp-date">I am currently working at ${res.data.company}</p>
+          <h2>My name is Anas Qazi !</h2>
+          <p class="workExp-date">I am currently working at null</p>
           <div class="links-nav">
-            <a href="https://www.google.com/maps/place/${res.data.location}" target="_blank" class="nav-link"><i class="fas fa-location-arrow"> ${res.data.location}</i></a>
-            <a href="${res.data.html_url}" target="_blank" class="nav-link"><i class="fab fa-github"> GitHub</i></a>
-            <a href="${res.data.blog}" target="_blank" class="nav-link"><i class="fas fa-rss"> Blog</i></a>
+            <a href="https://www.google.com/maps/place/Toronto, Canada" target="_blank" class="nav-link"><i class="fas fa-location-arrow"> Toronto, Canada</i></a>
+            <a href="https://github.com/ianasqazi" target="_blank" class="nav-link"><i class="fab fa-github"> GitHub</i></a>
+            <a href="ianasqazi.ca" target="_blank" class="nav-link"><i class="fas fa-rss"> Blog</i></a>
           </div>
         </div>
     
@@ -213,29 +162,29 @@ function generateHTML(username,colorChosen,res,res2) {
           
           <div class="row">
             <div class="col">
-              <h5>${res.data.bio}</h5>
+              <h5>Writing code that survives Friday deployments 🛠️</h5>
             </div>
           </div>
     
           <div class="row">
             <div class="card col">
              <h3>Public Repositories</h3>
-             <h4>${res.data.public_repos}</h4>
+             <h4>43</h4>
             </div>
             <div class="card col">
              <h3>Followers</h3>
-             <h4>${res.data.followers}</h4>
+             <h4>54</h4>
             </div>
           </div>
 
           <div class="row">
             <div class="card col">
              <h3>GitHub Stars</h3>
-             <h4>${res2.data.length}</h4>
+             <h4>15</h4>
             </div>
             <div class="card col">
              <h3>Following</h3>
-             <h4>${res.data.following}</h4>
+             <h4>57</h4>
             </div>
           </div>
 
@@ -243,10 +192,3 @@ function generateHTML(username,colorChosen,res,res2) {
       </div>
     </body>    
 </html>
-
-  `;
-  return htmlContent;
-
-};
-
-module.exports = generateHTML;
